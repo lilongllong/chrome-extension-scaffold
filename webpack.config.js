@@ -1,11 +1,12 @@
 const webpack = require("webpack");
 const path = require("path");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const glob = require("glob");
 
 module.exports = {
     entry: {
         vendor: [ "jquery" ],
-        main: [ "./src/js/index.js", "./src/resourcenp/index.less" ]
+        main: [ "./src/js/index.js", "./src/resource/index.less", ...glob.sync("./src/*.html"), ...glob.sync("./src/icons/*.png")]
     },
     output: {
         path: path.resolve("./build"),
@@ -25,7 +26,11 @@ module.exports = {
             },
             {
                 test: /\.(png|jpg|gif)$/,
-                loader: 'url-loader!file-loader?limit=8192'
+                loader: 'url-loader!file-loader?limit=8192&name=/icons/[name].[ext]'
+            },
+            {
+                test: /\.(html|htm)$/,
+                loader: "file-loader?name=[name].[ext]"
             }
         ]
     },
@@ -41,5 +46,6 @@ module.exports = {
             minChunks: Infinity
         }),
         new ExtractTextPlugin("./[name]/bundle.css")
+        // new HtmlWebpackPlugin()
     ],
 };
