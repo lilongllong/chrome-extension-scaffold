@@ -1,0 +1,34 @@
+{
+    "manifest_version": 2,
+    "name": "chrome extension scaffold",
+    "description": "a chrome extension scaffold",
+    "version": "0.0",
+    "icons": {
+        "128": "build/icons/128.png",
+        "64": "build/icons/64.png",
+        "32": "build/icons/32.png",
+        "16": "build/icons/16.png"
+    },
+
+    "content_scripts": [
+        {
+            "matches": [ "https://s.taobao.com/search*", "https://item.taobao.com/item.htm*" ],
+            "js": [ "build/vendor.js", "build/main/bundle.js" ],
+            "css": [ "build/main/bundle.css" ],
+            "run_at": "document_start"
+        }
+    ],
+
+    "browser_action": {
+        "default_icon": "build/icons/16.png",
+        "default_title": "chrome extension",
+        "default_popup": "build/popup.html"
+    },
+
+    "background": {
+        "page": "build/background.html"
+    },
+
+    "permissions": [ "tabs" ]
+
+}
