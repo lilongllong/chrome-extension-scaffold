@@ -1,0 +1,36 @@
+{
+  "name": "chrome-extension-scaffold",
+  "version": "1.0.0",
+  "description": "chrome extension template.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lilongllong/chrome-extension-scaffold.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lilongllong/chrome-extension-scaffold/issues"
+  },
+  "homepage": "https://github.com/lilongllong/chrome-extension-scaffold#readme",
+  "dependencies": {
+    "babel-cli": "^6.18.0",
+    "less": "^2.7.1",
+    "webpack": "^1.13.3"
+  },
+  "devDependencies": {
+    "babel-loader": "^6.2.8",
+    "css-loader": "^0.26.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "fileloader": "^1.0.0",
+    "jquery": "^3.1.1",
+    "less-loader": "^2.2.3",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
