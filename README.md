@@ -22,3 +22,4 @@ open http://localhost:8079/src
 
 ## chrome load
 使用chrome开发者模式，加载本项目根目录。
+开发完成后，只需保留build文件目录和manifest.json文件，用于chrome插件加载。
